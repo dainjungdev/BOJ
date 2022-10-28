@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     int a[10] = {};
-    int *max = &a[0];
+    int *max = a;
 
     for (int i = 1; i <= 9; ++i) {
         cin >> a[i];
@@ -12,6 +12,6 @@ int main() {
     }
 
     cout << *max << '\n';
-    cout << max - &a[0] << '\n';
+    cout << max - a << '\n';
     return 0;
 }
