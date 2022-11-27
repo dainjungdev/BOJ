@@ -35,7 +35,7 @@ async function webScraping(problemId) {
         '|': '｜',
         '}': '｝',
         '~': '～',
-        ' ': ' ', // 공백만 전각문자가 아닌 FOUR-PER-EM SPACE로 변환
+        ' ': ' ', 
     };
 
     try {
