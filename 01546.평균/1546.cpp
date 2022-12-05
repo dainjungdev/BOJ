@@ -10,9 +10,9 @@ int main() {
     vector<double> scores(n);
     int max = 0;
 
-    for (int i = 0; i < n; ++i) {
-        cin >> scores[i];
-        max = (max > scores[i]) ? max : scores[i];
+    for (double& score : scores) {
+        cin >> score;
+        max = (max > score) ? max : score;
     }
 
     double sum = 0;
