@@ -16,10 +16,10 @@ int main() {
     int sum = 0, max_cnt = 0;
     int cnt[8001] = {};
 
-    for (int i = 0; i < n; ++i) {
-        cin >> num[i];
-        sum += num[i];
-        max_cnt = max(max_cnt, ++cnt[num[i] + 4000]);
+    for (auto &e : num) {
+        cin >> e;
+        sum += e;
+        max_cnt = max(max_cnt, ++cnt[e + 4000]);
     }
 
     // Arithmetic Mean
