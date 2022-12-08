@@ -13,7 +13,6 @@ int main() {
     while (cin >> s) {
         cnt++;
     }
-    ß
     cout << cnt;
     return 0;
 }
