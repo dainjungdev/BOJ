@@ -2,7 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 
-var problemId = 3053;
+var problemId = 5086;
 var language = 'cpp';
 
 
@@ -91,7 +91,7 @@ async function webScraping(problemId, language) {
             }
         });
 
-        if (language = 'cpp') {
+        if (language == 'cpp') {
             fs.writeFile(dir + `/${problemId}.cpp`, cpp_template, function (err) {
                 if (err === null) {
                     console.log('cpp_success', problemId);
@@ -101,7 +101,7 @@ async function webScraping(problemId, language) {
             });
         }
 
-        if (language = 'python') {
+        if (language == 'python') {
             fs.writeFile(dir + `/${problemId}.py`, 'write code here', function (err) {
                 if (err === null) {
                     console.log('python_success', problemId);
