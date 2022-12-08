@@ -2,10 +2,11 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 
-var problemId = 1000;
+var problemId = 3053;
+var language = 'cpp';
 
 
-async function webScraping(problemId) {
+async function webScraping(problemId, language) {
     const map = {
         '!': '！',
         '%': '％',
@@ -69,6 +70,12 @@ async function webScraping(problemId) {
         // + `${sampleData[0]}`
         // + '```'
 
+        const cpp_template = '#include <iostream>\n\n'+
+        'using namespace std;\n\n'+
+        'int main() {\n'+
+        '    return 0;\n'+
+        '}';
+
         var replacedtitle = (title.replace(/[!%&()*+,\-./:;<=>?@\[\\\]^_`{|}~ ]/g, function (m) { return map[m]; }));
         var dir = `./${("000" + problemId).slice(-5)}.${replacedtitle}`;
 
@@ -84,6 +91,27 @@ async function webScraping(problemId) {
             }
         });
 
+        if (language = 'cpp') {
+            fs.writeFile(dir + `/${problemId}.cpp`, cpp_template, function (err) {
+                if (err === null) {
+                    console.log('cpp_success', problemId);
+                } else {
+                    console.log('cpp_fail');
+                }
+            });
+        }
+
+        if (language = 'python') {
+            fs.writeFile(dir + `/${problemId}.py`, 'write code here', function (err) {
+                if (err === null) {
+                    console.log('python_success', problemId);
+                } else {
+                    console.log('python_fail');
+                }
+            });
+        }
+
+
         // var oldPath = `./cpp/${problemId}.cpp`
         // var newPath = `./${dir}/${problemId}.cpp`
         // fs.rename(oldPath, newPath, function (err) {
@@ -97,4 +125,4 @@ async function webScraping(problemId) {
 }
 
 var fs = require('fs');
-webScraping(problemId);
+webScraping(problemId, language);
