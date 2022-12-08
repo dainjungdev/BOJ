@@ -10,11 +10,10 @@ int main() {
     int s[3] = {};
     while (cin >> s[0] >> s[1] >> s[2]) {
         if (s[0] == 0) {
-            break;
+            return 0;
         }
         sort(s, s + 3);
         cout << (s[0] * s[0] + s[1] * s[1] == s[2] * s[2] ? "right" : "wrong")
              << '\n';
     }
-    return 0;
 }
