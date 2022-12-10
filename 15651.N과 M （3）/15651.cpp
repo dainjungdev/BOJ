@@ -4,7 +4,6 @@
 using namespace std;
 
 int n, m;
-bool visited[8];
 vector<int> permutation_with_repetition;
 
 void dfs(int k) {
