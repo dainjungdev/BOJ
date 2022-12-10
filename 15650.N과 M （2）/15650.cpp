@@ -13,6 +13,7 @@ void dfs(int k) {
             cout << num << ' ';
         }
         cout << '\n';
+        return;
     }
 
     for (int i = k; i <= n; ++i) {
