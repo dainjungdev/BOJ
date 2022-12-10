@@ -5,11 +5,11 @@ using namespace std;
 
 int n, m;
 bool visited[9];
-vector<int> combination;
+vector<int> permutation;
 
 void DFS(int cnt) {
     if (cnt == m) {
-        for (auto &num : combination) {
+        for (auto &num : permutation) {
             cout << num << ' ';
         }
         cout << '\n';
@@ -18,9 +18,9 @@ void DFS(int cnt) {
     for (int i = 1; i <= n; ++i) {
         if (!visited[i]) {
             visited[i] = true;
-            combination.push_back(i);
+            permutation.push_back(i);
             DFS(cnt + 1);
-            combination.pop_back();
+            permutation.pop_back();
             visited[i] = false;
         }
     }
