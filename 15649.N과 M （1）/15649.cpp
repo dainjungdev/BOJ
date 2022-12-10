@@ -7,8 +7,8 @@ int n, m;
 bool visited[9];
 vector<int> permutation;
 
-void DFS(int cnt) {
-    if (cnt == m) {
+void dfs(int k) {
+    if (permutation.size() == m) {
         for (auto &num : permutation) {
             cout << num << ' ';
         }
@@ -19,7 +19,7 @@ void DFS(int cnt) {
         if (!visited[i]) {
             visited[i] = true;
             permutation.push_back(i);
-            DFS(cnt + 1);
+            dfs(k + 1);
             permutation.pop_back();
             visited[i] = false;
         }
@@ -28,6 +28,6 @@ void DFS(int cnt) {
 
 int main() {
     cin >> n >> m;
-    DFS(0);
+    dfs(1);
     return 0;
 }
