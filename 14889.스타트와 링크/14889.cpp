@@ -13,7 +13,6 @@ int minimum = 19000;
 void dfs(int k, int depth) {
     if (depth == n / 2) {
         int start = 0, link = 0;
-
         vector<int> start_team, link_team;
         for (int i = 1; i <= n; ++i) {
             if (start_members[i]) {
@@ -21,7 +20,7 @@ void dfs(int k, int depth) {
                     start += (s[i][j] + s[j][i]);
                 }
                 start_team.push_back(i);
-            } else if (!start_members[i]) {
+            } else {
                 for (int j : link_team) {
                     link += (s[i][j] + s[j][i]);
                 }
