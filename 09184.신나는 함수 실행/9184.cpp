@@ -19,9 +19,7 @@ int main() {
     for (int i = 1; i <= 20; ++i) {
         for (int j = 1; j <= 20; ++j) {
             for (int k = 1; k <= 20; ++k) {
-                if (i == 0 || j == 0 || k == 0) {
-                    d[i][j][k] = 1;
-                } else if (i < j && j < k) {
+                if (i < j && j < k) {
                     d[i][j][k] =
                         d[i][j][k - 1] + d[i][j - 1][k - 1] - d[i][j - 1][k];
                 } else {
