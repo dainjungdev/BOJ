@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 
 using namespace std;
@@ -18,10 +19,12 @@ int main() {
 
     int lis[501] = {};
     for (int i = 1; i <= 500; ++i) {
-        lis[i] = 1;
-        for (int j = 1; j < i; ++j) {
-            if (map[j] < map[i]) {
-                lis[i] = max(lis[i], lis[j] + 1);
+        if (map[i] != 0) {
+            lis[i] = 1;
+            for (int j = 1; j < i; ++j) {
+                if (map[j] < map[i]) {
+                    lis[i] = max(lis[i], lis[j] + 1);
+                }
             }
         }
     }
