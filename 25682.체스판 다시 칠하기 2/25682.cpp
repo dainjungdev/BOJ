@@ -11,7 +11,7 @@ int main() {
     int n, m, k;
     cin >> n >> m >> k;
 
-    int b[201][201] = {};
+    int b[2001][2001] = {};
     string s;
 
     for (int i = 1; i <= n; ++i) {
