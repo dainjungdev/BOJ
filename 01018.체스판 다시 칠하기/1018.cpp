@@ -18,14 +18,12 @@ int main() {
     }
 
     int repaint_min = 32;
-    for (int x = 0; x <= n - 8; ++x) {
+    for (int x = 0; x <= n - 8;  ++x) {
         for (int y = 0; y <= m - 8; ++y) {
             int repaint = 0;
             for (int i = x; i < x + 8; ++i) {
                 for (int j = y; j < y + 8; ++j) {
-                    if ((i + j) % 2 == 0 && board[i][j] == 'W') {
-                        repaint++;
-                    } else if ((i + j) % 2 != 0 && board[i][j] == 'B') {
+                    if ((i + j) % 2 == (board[i][j] == 'W')) {
                         repaint++;
                     }
                 }
