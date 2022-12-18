@@ -11,7 +11,7 @@ int main() {
     string a, b;
     cin >> a >> b;
 
-    vector<vector<int>> lcs(a.length() + 1, vector<int>(b.length() + 1));
+    int lcs[1001][1001] = {};
 
     for (int i = 1; i <= a.length(); ++i) {
         for (int j = 1; j <= b.length(); ++j) {
