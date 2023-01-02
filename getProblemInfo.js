@@ -52,11 +52,11 @@ async function webScraping(problemId, language) {
 
         const title = $('title').text().split(':')[1].replace(/[^0-9]/, '');
 
-        const problemDescription = $('#problem_description').find('p').text();
+        const problemDescription = $("#problem_description").text().replace('\t\t\t\t', '');
 
-        const problemInput = $('#problem_input').find('p').text();
+        const problemInput = $("#problem_input").text().replace(/[\t\t]/g, '');
 
-        const problemOutput = $('#problem_output').find('p').text();
+        const problemOutput = $('#problem_output').text().replace(/[\t\t]/g, '');
 
         // const sampleData = [];
         // const samples = $('.sampledata');
