@@ -67,9 +67,9 @@ async function webScraping(problemId, language) {
         const readme = `# ${problemId}. ${title} \n\n`
             + `[문제 링크](https://www.acmicpc.net/problem/${problemId}) \n\n`
             + `---\n`
-            + `### 문제 설명\n\n ${problemDescription}\n\n`
-            + `### 입력 \n\n ${problemInput}\n\n`
-            + `### 출력 \n\n ${problemOutput}\n\n`
+            + `### 문제 설명\n ${problemDescription}\n\n`
+            + `### 입력 \n ${problemInput}\n\n`
+            + `### 출력 \n ${problemOutput}\n\n`
             + `---\n`;
         // + `### 예제 입력 1 \n\n
         // + '```'
