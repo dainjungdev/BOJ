@@ -2,9 +2,15 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 
-var problemId = 5086;
+var problemId = 18258;
 var language = 'cpp';
 
+
+const config = { 
+	headers: { 
+	'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 
+	}, 
+}; 
 
 async function webScraping(problemId, language) {
     const map = {
@@ -36,12 +42,12 @@ async function webScraping(problemId, language) {
         '|': '｜',
         '}': '｝',
         '~': '～',
-        ' ': ' ', 
+        ' ': ' ',
     };
 
     try {
         const url = `https://www.acmicpc.net/problem/${problemId}`;
-        const response = await axios.get(url);
+        const response = await axios.get(url, config);
         const $ = cheerio.load(response.data);
 
         const title = $('title').text().split(':')[1].replace(/[^0-9]/, '');
@@ -70,11 +76,11 @@ async function webScraping(problemId, language) {
         // + `${sampleData[0]}`
         // + '```'
 
-        const cpp_template = '#include <iostream>\n\n'+
-        'using namespace std;\n\n'+
-        'int main() {\n'+
-        '    return 0;\n'+
-        '}';
+        const cpp_template = '#include <iostream>\n\n' +
+            'using namespace std;\n\n' +
+            'int main() {\n' +
+            '    return 0;\n' +
+            '}';
 
         var replacedtitle = (title.replace(/[!%&()*+,\-./:;<=>?@\[\\\]^_`{|}~ ]/g, function (m) { return map[m]; }));
         var dir = `./${("000" + problemId).slice(-5)}.${replacedtitle}`;
