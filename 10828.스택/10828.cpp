@@ -12,9 +12,9 @@ class Stack {
     void push(int n) { arr[pos++] = n; }
 
     void pop() {
-        if (pos == 0)
+        if (pos == 0) {
             cout << -1 << '\n';
-        else {
+        } else {
             cout << arr[--pos] << '\n';
         }
     }
@@ -24,10 +24,11 @@ class Stack {
     void empty() { cout << (pos == 0) << '\n'; }
 
     void top() {
-        if (pos == 0)
+        if (pos == 0) {
             cout << -1 << '\n';
-        else
+        } else {
             cout << arr[pos - 1] << '\n';
+        }
     }
 };
 
